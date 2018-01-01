@@ -5,7 +5,6 @@ const HtmlWebpackInlineSVGPlugin = require('html-webpack-inline-svg-plugin');
 const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
 let FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
-
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 	template : './src/main/template/index.html',
 	filename : 'index.html',
@@ -33,32 +32,33 @@ module.exports = {
 					presets : [ "es2015", "react" ]
 				}
 			} ]
-		},
-		{
+		}, {
 			test : /\.css$/,
 			use : ExtractTextPlugin.extract({
 				fallback : "style-loader",
 				use : "css-loader"
 			})
 		},
-		
-		
-		{ test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' }
+
+		{
+			test : /\.(png|woff|woff2|eot|ttf|svg)$/,
+			loader : 'url-loader?limit=100000'
+		}
 
 		]
 	},
 
-	plugins : [ HtmlWebpackPluginConfig, 
-		ExtractTextPluginConf,     
-		new HtmlWebpackInlineSVGPlugin(),
-	    new ServiceWorkerWebpackPlugin({
-	        entry: path.join(__dirname, 'src/main/react/registerServiceWorker.js'),
-	        filename: 'service-worker.js',
-	        publicPath: '/bows.simulator/'
-	      }),
-	      new FaviconsWebpackPlugin({
-	    	  	logo: __dirname + '/src/main/template/logo.png',
-	    	    inject: true,
-	      })
-	    ]
+	plugins : [
+			HtmlWebpackPluginConfig,
+			ExtractTextPluginConf,
+			new HtmlWebpackInlineSVGPlugin(),
+			new ServiceWorkerWebpackPlugin({
+				entry : path.join(__dirname,
+						'src/main/react/registerServiceWorker.js'),
+				filename : 'service-worker.js',
+				publicPath : '/bows.simulator/'
+			}), new FaviconsWebpackPlugin({
+				logo : __dirname + '/src/main/template/logo.png',
+				inject : true,
+			}) ]
 }
