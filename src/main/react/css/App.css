@@ -12,15 +12,59 @@
   height: 150px;
   padding: 20px;
   color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
+  margin-bottom: 5%;
 }
 
 .App-intro {
   font-size: large;
 }
+
+.text-area{
+  height: 200px;
+  width: 500px;
+}
+
+.form-container {
+  display:flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.text-area-container {
+  flex:1;
+}
+
+.select-file-container {
+  flex:1;
+  margin-top:4%;
+  align-self: center;
+  width: 50%;
+
+}
+
+
+.select-file-label {
+  padding-bottom:2%;
+  margin-right:4%;
+  margin-top:2%;
+  margin-bottom:2%;
+}
+
+
+.submit-container {
+  flex:1;
+  margin-top:4%;
+  background-color: rgb(170, 170, 170);
+  width: 50%;
+  align-self: center;
+}
+
+.submit-button-label {
+  margin:2%;
+}
+
+
+
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }

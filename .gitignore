@@ -7,3 +7,6 @@ yarn.lock
 .project
 .settings/
 node/
+src/main/resources/public
+package-lock.json
+.vscode/settings.json

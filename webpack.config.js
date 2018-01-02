@@ -18,8 +18,8 @@ const ExtractTextPluginConf = new ExtractTextPlugin({
 module.exports = {
 	entry : './src/main/react/index.js',
 	output : {
-		path : __dirname + "/src/main/webapp",
-		filename : 'index_bundle.js'
+		path : __dirname + "/src/main/resources/public/",
+		filename : 'react_bundle.js'
 	},
 
 	module : {
